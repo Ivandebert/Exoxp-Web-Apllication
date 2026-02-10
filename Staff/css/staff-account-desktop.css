@@ -1,0 +1,403 @@
+#account-icon {
+    width: 116px;
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid #999999;
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.1);
+}
+
+#account-icon:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+}
+
+#account-icon img {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(57%) saturate(582%) hue-rotate(78deg) brightness(95%) contrast(92%);
+}
+
+.search-bar-container {
+    position: relative;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fcfcfc;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    cursor: default;
+}
+
+.verification-tabs {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.verification-tabs input[type="radio"] {
+    display: none;
+}
+
+.tab-box {
+    flex-shrink: 0;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 6px;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    color: var(--secondary-text);
+    background-color: var(--card-white);
+    border: 1px solid var(--line-black);
+    border-radius: 6px;
+}
+
+.tab-box:hover {
+    background: #e8f5e9;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+input[type="radio"]:checked + .tab-box {
+        color: var(--secondary-green);
+    border: 1px solid var(--secondary-green);
+}
+
+.participants-grid {
+    display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.user-card {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+}
+
+.user-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-details img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 15px;
+    color: #333;
+}
+
+.tp-num {
+    font-size: 13px;
+    color: #888;
+}
+
+.status-badge {
+    flex-shrink: 0; 
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+.status-badge.active {
+    background: #e8f5e9;
+    color: #4CAF50;
+}
+
+.status-badge.suspended {
+    background: #ffebee;
+    color: #ff5252;
+}
+
+.results-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.view-profile-btn {
+    background-color:var(--primary-green);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.view-profile-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+    background-color: #45a049;
+}
+
+.add-btn-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    color: #888;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn-circle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: 10% auto;
+    padding: 30px;
+    width: 380px; 
+    max-width: 90%; 
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    animation: modalFade 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Define animation */
+@keyframes modalFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    color: #888;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+#modalImg {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #eee;
+    margin-bottom: 15px;
+}
+
+.modal-body h2 {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.modal-body p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-status {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+    color: #ffffff;
+}
+
+.btn-active {
+    background-color: #2ecc71;
+}
+
+.btn-active:hover {
+    background-color: #28b463;
+}
+
+.btn-suspend {
+    background-color: #e74c3c;
+}
+
+.btn-suspend:hover {
+    background-color: #cb4335;
+}
+
+
+
+/*responsive web design*/
+@media (max-width: 500px) {
+    .user-card {
+        flex-direction: column;   /* stack content vertically */
+        align-items: flex-start;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .user-details {
+        flex-direction: row;      /* icon + text side by side */
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .user-details img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .name {
+        font-size: 14px;
+        line-height: 1.2;
+        font-weight: 600;
+    }
+
+    .tp-num {
+        font-size: 12px;
+        color: #888;
+    }
+
+    .status-badge {
+        font-size: 11px;
+        padding: 2px 7px;      
+        border-radius: 10px;
+        align-self: flex-start; 
+        margin-top: 4px;
+    }
+
+    /* Optional: move badge below text if screen is very narrow */
+    @media (max-width: 350px) {
+        .status-badge {
+            align-self: flex-start;
+            margin-top: 4px;
+        }
+    }
+
+     /* -------- Modal Overlay -------- */
+    .modal-content {
+        width: 90%;       /* shrink modal to fit mobile screen */
+        padding: 20px;
+    }
+
+    #modalImg {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 10px;
+    }
+
+    .modal-body h2 {
+        font-size: 18px;
+    }
+
+    .modal-body p {
+        font-size: 14px;
+    }
+
+    .modal-actions {
+        flex-direction: column; /* stack buttons vertically */
+        gap: 10px;
+    }
+
+    .btn-status {
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .close-modal {
+        right: 15px;
+        top: 10px;
+        font-size: 22px;
+    }
+
+}
+@media (max-width: 768px) {
+    .user-card {
+        flex-direction: column;  
+        align-items: flex-start;  
+        gap: 10px;                
+    }
+
+    .status-badge {
+        margin-top: 6px;          
+        align-self: flex-start;   
+    }
+}
+
