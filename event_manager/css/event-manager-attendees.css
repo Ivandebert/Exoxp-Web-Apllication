@@ -1,0 +1,242 @@
+#calendar-icon-box {
+    width: 116px;
+    height: 76px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    border-color: #999999;
+    box-shadow: 4px 4px 5px rgba(0,0,0,0.1);
+}
+
+#calendar-icon-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease;
+}
+
+#calendar-icon-box img{
+    filter: brightness(0) saturate(100%) invert(47%) sepia(57%) saturate(582%) hue-rotate(78deg) brightness(95%) contrast(92%);
+}
+.content-box{
+    margin-top: 30px;
+}
+    
+.back-bttn {
+    position: fixed;
+    top: 80px;
+    left: 80px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.back-bttn:hover {
+    transform: translateX(-3px);
+}
+
+@media (max-width: 1024px) {
+    .back-bttn {
+        position: fixed;       
+        top: 16px;             
+        left: 16px;            
+        margin: 0;             
+        max-width: none;       
+        font-size: 1rem;      
+        padding: 8px 12px;     
+        z-index: 200;          
+    }
+}
+
+/* Event Image */
+.event-image-container {
+    width: 100%;
+    height: 250px;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.event-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block; 
+}
+
+.event-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FAFAFA;
+    border: 2px dashed #E0E0E0;
+    border-radius: 8px;
+}
+
+/* Event Title */
+.event-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--secondary-green);
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+/* Progress */
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgb(237, 237, 237);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #45a049;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+.progress-text {
+    font-size: 12px;
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+.no-attendance-message {
+    font-size: 16px;           
+    color: #555555;            
+    font-weight: 500;          
+    text-align: center;        
+    margin: 20px 0;           
+    background-color: #f8f8f8; 
+    padding: 10px;             
+    border-radius: 8px;        
+    border: 1px solid #ddd;    
+}
+
+
+/* Table */
+.table-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+th {
+    font-weight: bold;
+}
+
+/* Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background: #ccc;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 2px;
+    bottom: 2px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background: var(--secondary-green);
+}
+
+input:checked + .slider::before {
+    transform: translateX(20px);
+}
+.btn-save-attendance {
+    width: 100%;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #2fbf71, #1f9d55);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(47, 191, 113, 0.35);
+    transition: all 0.25s ease;
+    margin-top: 20px;
+}
+
+
+/* Hover (desktop) */
+.btn-save-attendance:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(47, 191, 113, 0.45);
+    background: linear-gradient(135deg, #34d17c, #22b063);
+}
+
+/* Click effect */
+.btn-save-attendance:active {
+    transform: scale(0.97);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Disabled state (optional) */
+.btn-save-attendance:disabled {
+    background: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    box-shadow: none;
+}

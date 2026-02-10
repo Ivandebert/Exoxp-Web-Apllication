@@ -1,0 +1,279 @@
+:root {
+    --primary-green: #2D6A4F;
+    --secondary-green: #52B788;
+    --ice-mint: #f0f7f4;
+    --shadow: rgba(45, 106, 79, 0.1);
+    --card-white: #FFFFFF;
+    --primary-text: #444444;
+    --secondary-text: #666666;
+    --line-black: #999999;
+}
+
+.top-bar {
+    position: fixed;
+    width: 100%;
+    height: 74px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 6px 4px rgba(0,0,0,0.05);
+}
+
+.default-icon-container {
+    margin-left: auto;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.icon-btn.no-hover:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.icon-btn svg {
+    width: 32px;
+    height: auto;
+    color: var(--secondary-green);
+}
+
+.eco-logo {
+    width: 70px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.top-bar h2 {
+    font-size: 40px; 
+    color: var(--primary-green);
+    font-weight: 500;
+}
+
+.side-bar {
+    position: fixed;
+    height: 100%;
+    width: 74px;
+    background-color: var(--primary-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 128px;
+    z-index: 800;
+}
+
+.admin-icon-container {
+    margin-top: 142px;
+    margin-left: 16px;
+    margin-right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    height: 100%;
+}
+
+.admin-icon {
+    width: 40px;
+    height: auto;
+}
+
+#logout {
+    width: 40px;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: 32px;
+}
+
+/* Main Content Area */
+.main-content {
+    margin-left: 80px; /* Adjust based on your sidebar width */
+    margin-top: 70px; /* Adjust based on your top-bar height */
+    padding: 24px;
+    min-height: calc(100vh);
+    width: 100%
+}
+
+/* Page Header */
+.page-header {
+    margin-bottom: 24px;
+}
+
+.title-box {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 1024px) {
+    .analytics-grid {
+        gap: 12px;
+    }
+
+    .analytics-card {
+        
+        padding: 14px;
+    }
+
+    .card-title {
+        font-size: 12px;
+        
+    }
+   
+
+}
+
+
+
+@media screen and (max-width: 768px){
+    .side-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 72px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 9999;
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .icon-btn img {
+        width: 30px;
+        filter: brightness(0) saturate(100%) invert(47%) sepia(57%) saturate(582%) hue-rotate(78deg);
+    }
+
+
+    .top-bar {
+        height: 56px; /* thinner */
+        padding: 0 16px;
+    }
+
+    .top-bar h2 {
+        font-size: 28px;
+    }
+
+    .eco-logo {
+        width: 50px;
+        margin-right: 12px;
+    }
+
+    .icon-btn img {
+        width: 28px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+
+    .title-box {
+        padding: 12px 16px;
+        box-shadow: none;
+        width: auto;
+    }
+
+    .title-box h1 {
+        font-size: 24px;
+        color: var(--primary-green);
+        font-weight: 700;
+    }
+
+    .analytics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .admin-icon-container {
+        margin-top: 0;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    #logout {
+        margin: 0;
+        width: 30px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        margin-top: 60px;
+        width: 100%;
+        padding: 16px;
+        padding-bottom: 100px;
+    }
+     .stat-value {
+        font-size: 20px;
+        
+    }
+
+    .large-analytics-card-2 {
+        margin-bottom: 74px;
+    }
+}
+@media screen and (max-width: 425px){
+    .analytics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .top-bar {
+        height: 52px; /* even thinner */
+        padding: 0 12px;
+    }
+
+    .top-bar h2 {
+        font-size: 22px;
+    }
+
+    .eco-logo {
+        width: 42px;
+        margin-right: 8px;
+    }
+
+    .default-icon-container {
+        gap: 16px;
+        margin-right: 12px;
+    }
+
+    .icon-btn img {
+        width: 24px;
+    }
+
+    .page-header {
+        margin-bottom: 12px;
+    }
+     .stat-value {
+        font-size: 18px;
+        
+    }
+
+}
